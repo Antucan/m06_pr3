@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>newWindow</title>
+</head>
+
+<body>
+    <script>
+        //declarating colors
+        let arrayColors = [
+            "#800000",
+            "#808000",
+            "#008080",
+            "#808080"
+        ];
+        let randomColors = arrayColors[Math.floor(Math.random() * arrayColors.length)];
+        document.body.style.backgroundColor = randomColors;
+
+    </script>
+    <div id="colorName"></div>
+</body>
+
+</html>
