@@ -1,7 +1,9 @@
+//variables que voy a usar mas adelante
 let countDiv = document.getElementById("countdown");
 let countTime = 30;
 let countStart;
 let firstWindow = true;
+
 //updating the countdown
 function startCountdown() {
     if (countStart) {
@@ -27,5 +29,5 @@ function startCountdown() {
             newWindow = window.open("newWindow.html", "", "width=500,height=500");
         }
     }, 3000);
-}
+};
 
