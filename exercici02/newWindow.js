@@ -19,16 +19,9 @@ let randomColors = arrayColors[Math.floor(Math.random() * arrayColors.length)];
 document.body.style.backgroundColor = randomColors;
 colorDiv.innerHTML = colorNames[randomColors];
 
-
-
 //saving color
-function saveColor() {
-    let count = 0;
-    let color1;
-    let color2;
-    if (count == 0) {
-        color1 = colorNames[randomColors];
-        count++;
-    }
-    trysDiv.innerHTML = count;
-}
+let count = 0;
+let SavedColor = "";
+document.addEventListener('click', function (event) {
+    let ActualColor = document.body.style.backgroundColor;
+});

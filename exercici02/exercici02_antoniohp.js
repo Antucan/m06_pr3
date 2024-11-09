@@ -21,12 +21,14 @@ function startCountdown() {
     }, 1000);
 
     setInterval(function () {
+        let randLeft = Math.floor(Math.random() * window.screen.width);
+        let randTop = Math.floor(Math.random() * window.screen.height);
         let newWindow;
         if (firstWindow) {
             newWindow = window.open("newWindow.html", "", "left=750,top=250,width=500,height=500");
             firstWindow = false;
         } else {
-            newWindow = window.open("newWindow.html", "", "width=500,height=500");
+            newWindow = window.open("newWindow.html", "", `left=${randLeft},top=${randTop},width=500,height=500`);
         }
     }, 3000);
 };
