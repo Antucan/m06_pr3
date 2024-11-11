@@ -18,10 +18,9 @@ let randomColors = arrayColors[Math.floor(Math.random() * arrayColors.length)];
 
 document.body.style.backgroundColor = randomColors;
 colorDiv.innerHTML = colorNames[randomColors];
-
 //saving color
 let count = 0;
 let SavedColor = "";
 document.addEventListener('click', function (event) {
-    let ActualColor = document.body.style.backgroundColor;
+    //document.body.style.backgroundColor = "white";
 });

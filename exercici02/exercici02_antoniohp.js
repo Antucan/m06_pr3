@@ -3,6 +3,7 @@ let countDiv = document.getElementById("countdown");
 let countTime = 30;
 let countStart;
 let firstWindow = true;
+let prueba = document.getElementById("prueba");
 
 //updating the countdown
 function startCountdown() {
