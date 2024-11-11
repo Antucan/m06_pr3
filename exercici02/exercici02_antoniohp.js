@@ -1,6 +1,6 @@
 //variables que voy a usar mas adelante
 let countDiv = document.getElementById("countdown");
-let countTime = 30;
+let countTime;
 let countStart;
 let firstWindow = true;
 let prueba = document.getElementById("prueba");
@@ -11,7 +11,7 @@ function startCountdown() {
         clearInterval(countStart);
     }
     //reseting the count
-    countTime = 30;
+    countTime = 6;
 
     //starting the count
     countStart = setInterval(function () {
@@ -19,9 +19,13 @@ function startCountdown() {
             countDiv.innerHTML = countTime;
             countTime--;
         }
+        if (countTime < 0){
+            clearInterval(countStart);
+            clearInterval(windowInterval);
+        }
     }, 1000);
 
-    setInterval(function () {
+    let windowInterval = setInterval(function () {
         let randLeft = Math.floor(Math.random() * window.screen.width);
         let randTop = Math.floor(Math.random() * window.screen.height);
         let newWindow;
@@ -33,4 +37,10 @@ function startCountdown() {
         }
     }, 3000);
 };
+
+document.body.style.backgroundColor = savedColor;
+function clickNewWindow(color, window) {
+document.getElementById("prueba").innerHTML = color;
+}
+
 
