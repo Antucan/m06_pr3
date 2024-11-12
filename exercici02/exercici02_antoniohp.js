@@ -19,7 +19,7 @@ function startCountdown() {
             countDiv.innerHTML = countTime;
             countTime--;
         }
-        if (countTime < 0){
+        if (countTime < 0) {
             clearInterval(countStart);
             clearInterval(windowInterval);
         }
@@ -40,7 +40,8 @@ function startCountdown() {
 
 document.body.style.backgroundColor = savedColor;
 function clickNewWindow(color, window) {
-document.getElementById("prueba").innerHTML = color;
+    let colorsArray = [color];
+    document.getElementById("prueba").innerHTML = colorsArray;
 }
 
 
