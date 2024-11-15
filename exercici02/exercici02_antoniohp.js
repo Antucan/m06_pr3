@@ -7,6 +7,7 @@ let firstWindow = true;
 let prueba = document.getElementById("prueba");
 let result = document.getElementById("result");
 let openedWindows = 0;
+let arrayOpenedWindows = [];
 
 result.innerHTML = '';
 
@@ -18,7 +19,7 @@ function startCountdown() {
         clearInterval(windowInterval);
     }
     //reseting the count
-    countTime = 30;
+    countTime = 9;
 
     //starting the count
     countStart = setInterval(function () {
@@ -29,7 +30,12 @@ function startCountdown() {
         if (countTime < 0) {
             clearInterval(countStart);
             clearInterval(windowInterval);
-            result.innerHTML = 'You lose!';
+            result.innerHTML = 'You lose! ' + arrayOpenedWindows.length + ' opened windows.';
+            arrayOpenedWindows.forEach(win => {
+                if (win && !win.closed) {
+                    win.close();
+                }
+            })
         }
     }, 1000);
 
@@ -44,6 +50,7 @@ function startCountdown() {
             newWindow = window.open("newWindow.html", "", `left=${randLeft},top=${randTop},width=500,height=500`);
         }
         openedWindows++;
+        arrayOpenedWindows.push(newWindow);
     }, 3000);
 };
 let firstClick = null;
@@ -94,7 +101,7 @@ function clickNewWindow(color, window) {
             console.log('Ninguna ventana abierta, ganaste!');
             clearInterval(countStart);
             clearInterval(windowInterval);
-            result.innerHTML = 'You won!';
+            result.innerHTML = 'You won! ' + arrayOpenedWindows.length + ' opened windows.';
         }
     }
 }
