@@ -1,6 +1,6 @@
 let colorDiv = document.getElementById("colorName");
 let trysDiv = document.getElementById("trys");
-let savedColor;
+
 //declarating colors
 let arrayColors = [
     "#800000",
@@ -21,7 +21,7 @@ document.body.style.backgroundColor = randomColors;
 colorDiv.innerHTML = colorNames[randomColors];
 
 //saving color
-document.addEventListener('click', function (event) {
+window.addEventListener('click', function (event) {
     //un window.opener que llama a una funcion de exercici02
     //llamada clickNewWindow() que se le pasa a los colores
     window.opener.clickNewWindow(randomColors, window);
