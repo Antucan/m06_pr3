@@ -2,6 +2,7 @@
 let countDiv = document.getElementById("countdown");
 let countTime;
 let countStart;
+let windowInterval;
 let firstWindow = true;
 let prueba = document.getElementById("prueba");
 let result = document.getElementById("result");
@@ -11,6 +12,7 @@ let openedWindows = 0;
 function startCountdown() {
     if (countStart) {
         clearInterval(countStart);
+        clearInterval(windowInterval);
     }
     //reseting the count
     countTime = 30;
@@ -31,7 +33,7 @@ function startCountdown() {
         }
     }, 1000);
 
-    let windowInterval = setInterval(function () {
+    windowInterval = setInterval(function () {
         let randLeft = Math.floor(Math.random() * window.screen.width);
         let randTop = Math.floor(Math.random() * window.screen.height);
         let newWindow;
