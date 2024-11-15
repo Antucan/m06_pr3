@@ -8,8 +8,11 @@ let prueba = document.getElementById("prueba");
 let result = document.getElementById("result");
 let openedWindows = 0;
 
+result.innerHTML = '';
+
 //updating the countdown
 function startCountdown() {
+    result.innerHTML = '';
     if (countStart) {
         clearInterval(countStart);
         clearInterval(windowInterval);
@@ -26,10 +29,7 @@ function startCountdown() {
         if (countTime < 0) {
             clearInterval(countStart);
             clearInterval(windowInterval);
-        }
-        if (result.innerHTML == 'You won!') {
-            clearInterval(countStart);
-            clearInterval(windowInterval);
+            result.innerHTML = 'You lose!';
         }
     }, 1000);
 
@@ -92,6 +92,8 @@ function clickNewWindow(color, window) {
 
         if (openedWindows === 0) {
             console.log('Ninguna ventana abierta, ganaste!');
+            clearInterval(countStart);
+            clearInterval(windowInterval);
             result.innerHTML = 'You won!';
         }
     }
